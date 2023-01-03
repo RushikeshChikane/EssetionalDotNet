@@ -155,14 +155,30 @@ namespace SerializationTest
                 // dynamic data type variable
                 var option = new JsonSerializerOptions { IncludeFields = true };
                 var productJson = JsonSerializer.Serialize<List<Product>>(products, option);
+                //encoding data in the form of stream
+               
                 string FileName = "products.json";
+                //writing data into file
                 File.WriteAllText(FileName, productJson);
 
 
                 //Deserialization from JSON file
+                //Reading data from the file
                 string jsonString = File.ReadAllText(FileName);
+
+                //Decoding strem into object
                 List<Product> jsonProducts = JsonSerializer.Deserialize<List<Product>>(jsonString);
                 Console.WriteLine("Deserializing data from json file");
+                
+
+                //Difference between for loop and foreach loop
+                /*
+                for(int i=0;i<=jsonProducts.Count;i++)
+                {
+                    Product product = jsonProducts[i];
+                    Console.WriteLine($"{product.Title} : {product.Description}");
+                }
+                */
 
                 foreach (Product product in jsonProducts)
                 {
