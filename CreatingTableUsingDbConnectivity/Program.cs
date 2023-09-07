@@ -5,8 +5,6 @@ MySqlConnection conn = new MySqlConnection();
 
 conn.ConnectionString = "server=localhost;user=root;database=classicmodels;port=3306;password=password";
 
-
-
 MySqlCommand cmd = new MySqlCommand();
 
 try{
@@ -28,7 +26,6 @@ try{
                                   "VALUES(fname, lname, DATE(bday)); SET empno = LAST_INSERT_ID(); END";
 
                 cmd.ExecuteNonQuery();              
-
 }
 catch(MySqlException ex){
     Console.WriteLine("Error "+ ex.Number+"has occured:"+ex.Message);
