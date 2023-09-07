@@ -1,10 +1,6 @@
 ﻿using System;
-
-
 namespace AnnonymousMethodTest
 {
-
-
     public delegate void BasicOperation();
     public delegate void DoSomething();
 
@@ -16,12 +12,10 @@ namespace AnnonymousMethodTest
     class Program
     {
         //callback function
-
         void PrintReport()
         {
             Console.WriteLine("Printing a Report : graph, table, score card");
         }
-        
         static void Main(string[] args)
         {
             //Normally Function Calling
@@ -35,7 +29,6 @@ namespace AnnonymousMethodTest
             //resolving name of function at runtmr
             Method1();
 
-
             //Inline function
             //Annonnymouse Method by
 
@@ -48,8 +41,7 @@ namespace AnnonymousMethodTest
             //Lambda symol 
             DoSomething Method3 =()=>{Console.WriteLine("Printing Covid Spread Lockdown Report");};
             Method3();
-
-       
+            
             AnnonymousMethod1 prroxy1= new AnnonymousMethod1(
                                                              delegate (int x)
                                                              {
@@ -71,8 +63,6 @@ namespace AnnonymousMethodTest
             //Answer the language which transforms itself over period as per
             //the culture society transforms
             Console.WriteLine("Welcome to .NET Programming");                                    
-
-
 
         }
     }
