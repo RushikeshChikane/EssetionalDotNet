@@ -15,7 +15,6 @@ public class DBManager
         connetionString = "server=localhost;port=3306;user=root;password=password;database=transflower";
     }
 
-
     public static List<Department> GetAllDepartments()
     {
         List<Department> deparmnets = new List<Department>();
@@ -24,23 +23,18 @@ public class DBManager
         //observer in object model
         //disconnected
         //connection, command, adapater, dataset, datarow
-
         MySqlConnection con = new MySqlConnection();
         con.ConnectionString = connetionString;
 
         string query = "select * from departments";
         MySqlCommand cmd = new MySqlCommand(query, con as MySqlConnection);
-
         DataSet ds = new DataSet();
-
         MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
         try
         {
-
             da.Fill(ds);
             DataTable dt = ds.Tables[0];
-
 
             foreach (DataRow datarow in dt.Rows)
             {
